@@ -1,0 +1,102 @@
+/*
+ * Copyright (c) 2011 Michael Berkovich
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining
+ * a copy of this software and associated documentation files (the
+ * "Software"), to deal in the Software without restriction, including
+ * without limitation the rights to use, copy, modify, merge, publish,
+ * distribute, sublicense, and/or sell copies of the Software, and to
+ * permit persons to whom the Software is furnished to do so, subject to
+ * the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be
+ * included in all copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ * NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ * LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
+#import <Foundation/Foundation.h>
+#import "PlatformRequest.h"
+
+@protocol PlatformSessionDelegate;
+
+@interface Platform : NSObject <PlatformRequestDelegate> {
+}
+
+@property(nonatomic, retain) NSString* appId;
+
+@property(nonatomic, copy) NSString* apiBaseURL;
+
+@property(nonatomic, copy) NSString* oauthBaseURL;
+
+@property(nonatomic, copy) NSString* accessToken;
+
+@property(nonatomic, assign) id<PlatformSessionDelegate> sessionDelegate;
+
+@property(nonatomic, retain) PlatformRequest* request;
+
+
+- (id) initWithAppId:(NSString *)newAppId;
+
+- (void) authorize:(id<PlatformSessionDelegate>)delegate;
+
+- (void) authorizeWithUsername:(NSString *)username andPassword:(NSString *)password andDelegate:(id<PlatformSessionDelegate>)delegate;
+
+- (void) validate:(id<PlatformSessionDelegate>)delegate;
+
+- (BOOL) handleOpenURL:(NSURL *)url;
+
+- (void) logout:(id<PlatformSessionDelegate>)delegate;
+
+- (PlatformRequest*) requestWithPath:(NSString *)path
+                     andDelegate:(id <PlatformRequestDelegate>)delegate;
+
+- (PlatformRequest*) requestWithPath:(NSString *)path
+                       andParams:(NSMutableDictionary *)params
+                     andDelegate:(id <PlatformRequestDelegate>)delegate;
+
+- (PlatformRequest*) requestWithPath:(NSString *)path
+                       andParams:(NSMutableDictionary *)params
+                   andHttpMethod:(NSString *)httpMethod
+                     andDelegate:(id <PlatformRequestDelegate>)delegate;
+
+- (BOOL)isAccessTokenPresent;
+
+@end
+
+
+/************************************************************************************
+ ** Platform Session Delegate
+ ************************************************************************************/
+
+/**
+ * Your application should implement this delegate to receive session callbacks.
+ */
+@protocol PlatformSessionDelegate <NSObject>
+
+@optional
+
+/**
+ * Called when the user successfully logged in 
+ * or when the access token was validated.
+ */
+- (void) platformUserDidLogin;
+
+/**
+ * Called when the user dismissed the dialog without logging in.
+ * or when the access token was not validated.
+ */
+- (void) platformUserDidNotLogin:(BOOL)cancelled;
+
+/**
+ * Called when the user logged out.
+ */
+- (void) platformUserDidLogout;
+
+@end

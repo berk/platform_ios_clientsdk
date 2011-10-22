@@ -1,0 +1,436 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C13B4421452111800EF1089 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C13B4411452111800EF1089 /* UIKit.framework */; };
+		4C13B4441452111800EF1089 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C13B4431452111800EF1089 /* Foundation.framework */; };
+		4C13B4461452111800EF1089 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C13B4451452111800EF1089 /* CoreGraphics.framework */; };
+		4C13B44C1452111800EF1089 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4C13B44A1452111800EF1089 /* InfoPlist.strings */; };
+		4C13B44E1452111800EF1089 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C13B44D1452111800EF1089 /* main.m */; };
+		4C13B4521452111800EF1089 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C13B4511452111800EF1089 /* AppDelegate.m */; };
+		4C13B4551452111800EF1089 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C13B4531452111800EF1089 /* MainStoryboard_iPhone.storyboard */; };
+		4C13B4581452111800EF1089 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C13B4561452111800EF1089 /* MainStoryboard_iPad.storyboard */; };
+		4C13B45B1452111800EF1089 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C13B45A1452111800EF1089 /* ViewController.m */; };
+		4C13B4851452112700EF1089 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C13B46C1452112700EF1089 /* NSObject+SBJson.m */; };
+		4C13B4861452112700EF1089 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C13B46F1452112700EF1089 /* SBJsonParser.m */; };
+		4C13B4871452112700EF1089 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C13B4711452112700EF1089 /* SBJsonStreamParser.m */; };
+		4C13B4881452112700EF1089 /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C13B4731452112700EF1089 /* SBJsonStreamParserAccumulator.m */; };
+		4C13B4891452112700EF1089 /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C13B4751452112700EF1089 /* SBJsonStreamParserAdapter.m */; };
+		4C13B48A1452112700EF1089 /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C13B4771452112700EF1089 /* SBJsonStreamParserState.m */; };
+		4C13B48B1452112700EF1089 /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C13B4791452112700EF1089 /* SBJsonStreamWriter.m */; };
+		4C13B48C1452112700EF1089 /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C13B47B1452112700EF1089 /* SBJsonStreamWriterAccumulator.m */; };
+		4C13B48D1452112700EF1089 /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C13B47D1452112700EF1089 /* SBJsonStreamWriterState.m */; };
+		4C13B48E1452112700EF1089 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C13B47F1452112700EF1089 /* SBJsonTokeniser.m */; };
+		4C13B48F1452112700EF1089 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C13B4811452112700EF1089 /* SBJsonUTF8Stream.m */; };
+		4C13B4901452112700EF1089 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C13B4831452112700EF1089 /* SBJsonWriter.m */; };
+		4C13B4911452112700EF1089 /* Platform.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C13B4641452112700EF1089 /* Platform.m */; };
+		4C13B4921452112700EF1089 /* PlatformRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C13B4671452112700EF1089 /* PlatformRequest.m */; };
+		4C13B4931452112700EF1089 /* PlatformResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C13B4691452112700EF1089 /* PlatformResponse.m */; };
+		4C5500071452423700E4368B /* platform.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C5500061452423700E4368B /* platform.png */; };
+		4C55000B1452430700E4368B /* BookmarkTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C5500091452430700E4368B /* BookmarkTableViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4C13B43D1452111800EF1089 /* PlatformClientSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlatformClientSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C13B4411452111800EF1089 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4C13B4431452111800EF1089 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4C13B4451452111800EF1089 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4C13B4491452111800EF1089 /* PlatformClientSample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PlatformClientSample-Info.plist"; sourceTree = "<group>"; };
+		4C13B44B1452111800EF1089 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4C13B44D1452111800EF1089 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4C13B44F1452111800EF1089 /* PlatformClientSample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlatformClientSample-Prefix.pch"; sourceTree = "<group>"; };
+		4C13B4501452111800EF1089 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4C13B4511452111800EF1089 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4C13B4541452111800EF1089 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		4C13B4571452111800EF1089 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		4C13B4591452111800EF1089 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4C13B45A1452111800EF1089 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4C13B4631452112700EF1089 /* Platform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Platform.h; sourceTree = "<group>"; };
+		4C13B4641452112700EF1089 /* Platform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Platform.m; sourceTree = "<group>"; };
+		4C13B4651452112700EF1089 /* PlatformSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlatformSDK.h; sourceTree = "<group>"; };
+		4C13B4661452112700EF1089 /* PlatformRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlatformRequest.h; sourceTree = "<group>"; };
+		4C13B4671452112700EF1089 /* PlatformRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlatformRequest.m; sourceTree = "<group>"; };
+		4C13B4681452112700EF1089 /* PlatformResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlatformResponse.h; sourceTree = "<group>"; };
+		4C13B4691452112700EF1089 /* PlatformResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlatformResponse.m; sourceTree = "<group>"; };
+		4C13B46B1452112700EF1089 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
+		4C13B46C1452112700EF1089 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
+		4C13B46D1452112700EF1089 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
+		4C13B46E1452112700EF1089 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		4C13B46F1452112700EF1089 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		4C13B4701452112700EF1089 /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
+		4C13B4711452112700EF1089 /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
+		4C13B4721452112700EF1089 /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
+		4C13B4731452112700EF1089 /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
+		4C13B4741452112700EF1089 /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
+		4C13B4751452112700EF1089 /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
+		4C13B4761452112700EF1089 /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
+		4C13B4771452112700EF1089 /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
+		4C13B4781452112700EF1089 /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		4C13B4791452112700EF1089 /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
+		4C13B47A1452112700EF1089 /* SBJsonStreamWriterAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterAccumulator.h; sourceTree = "<group>"; };
+		4C13B47B1452112700EF1089 /* SBJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterAccumulator.m; sourceTree = "<group>"; };
+		4C13B47C1452112700EF1089 /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterState.h; sourceTree = "<group>"; };
+		4C13B47D1452112700EF1089 /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
+		4C13B47E1452112700EF1089 /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonTokeniser.h; sourceTree = "<group>"; };
+		4C13B47F1452112700EF1089 /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
+		4C13B4801452112700EF1089 /* SBJsonUTF8Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonUTF8Stream.h; sourceTree = "<group>"; };
+		4C13B4811452112700EF1089 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
+		4C13B4821452112700EF1089 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		4C13B4831452112700EF1089 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		4C13B4841452112700EF1089 /* PlatformSDK-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PlatformSDK-Prefix.pch"; sourceTree = "<group>"; };
+		4C5500061452423700E4368B /* platform.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = platform.png; sourceTree = "<group>"; };
+		4C5500081452430700E4368B /* BookmarkTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookmarkTableViewController.h; sourceTree = "<group>"; };
+		4C5500091452430700E4368B /* BookmarkTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookmarkTableViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C13B43A1452111800EF1089 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C13B4421452111800EF1089 /* UIKit.framework in Frameworks */,
+				4C13B4441452111800EF1089 /* Foundation.framework in Frameworks */,
+				4C13B4461452111800EF1089 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C13B4321452111800EF1089 = {
+			isa = PBXGroup;
+			children = (
+				4C13B4471452111800EF1089 /* PlatformClientSample */,
+				4C13B4401452111800EF1089 /* Frameworks */,
+				4C13B43E1452111800EF1089 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4C13B43E1452111800EF1089 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C13B43D1452111800EF1089 /* PlatformClientSample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C13B4401452111800EF1089 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4C13B4411452111800EF1089 /* UIKit.framework */,
+				4C13B4431452111800EF1089 /* Foundation.framework */,
+				4C13B4451452111800EF1089 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4C13B4471452111800EF1089 /* PlatformClientSample */ = {
+			isa = PBXGroup;
+			children = (
+				4C5500041452420300E4368B /* Images */,
+				4C13B4611452112700EF1089 /* PlatformSDK */,
+				4C13B4501452111800EF1089 /* AppDelegate.h */,
+				4C13B4511452111800EF1089 /* AppDelegate.m */,
+				4C13B4531452111800EF1089 /* MainStoryboard_iPhone.storyboard */,
+				4C13B4561452111800EF1089 /* MainStoryboard_iPad.storyboard */,
+				4C13B4591452111800EF1089 /* ViewController.h */,
+				4C13B45A1452111800EF1089 /* ViewController.m */,
+				4C13B4481452111800EF1089 /* Supporting Files */,
+				4C5500081452430700E4368B /* BookmarkTableViewController.h */,
+				4C5500091452430700E4368B /* BookmarkTableViewController.m */,
+			);
+			path = PlatformClientSample;
+			sourceTree = "<group>";
+		};
+		4C13B4481452111800EF1089 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C13B4491452111800EF1089 /* PlatformClientSample-Info.plist */,
+				4C13B44A1452111800EF1089 /* InfoPlist.strings */,
+				4C13B44D1452111800EF1089 /* main.m */,
+				4C13B44F1452111800EF1089 /* PlatformClientSample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4C13B4611452112700EF1089 /* PlatformSDK */ = {
+			isa = PBXGroup;
+			children = (
+				4C13B4621452112700EF1089 /* JSON */,
+				4C13B4631452112700EF1089 /* Platform.h */,
+				4C13B4641452112700EF1089 /* Platform.m */,
+				4C13B4651452112700EF1089 /* PlatformSDK.h */,
+				4C13B4661452112700EF1089 /* PlatformRequest.h */,
+				4C13B4671452112700EF1089 /* PlatformRequest.m */,
+				4C13B4681452112700EF1089 /* PlatformResponse.h */,
+				4C13B4691452112700EF1089 /* PlatformResponse.m */,
+				4C13B46A1452112700EF1089 /* Supporting Files */,
+			);
+			name = PlatformSDK;
+			path = ../../PlatformSDK/PlatformSDK;
+			sourceTree = "<group>";
+		};
+		4C13B4621452112700EF1089 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				4C13B46B1452112700EF1089 /* NSObject+SBJson.h */,
+				4C13B46C1452112700EF1089 /* NSObject+SBJson.m */,
+				4C13B46D1452112700EF1089 /* SBJson.h */,
+				4C13B46E1452112700EF1089 /* SBJsonParser.h */,
+				4C13B46F1452112700EF1089 /* SBJsonParser.m */,
+				4C13B4701452112700EF1089 /* SBJsonStreamParser.h */,
+				4C13B4711452112700EF1089 /* SBJsonStreamParser.m */,
+				4C13B4721452112700EF1089 /* SBJsonStreamParserAccumulator.h */,
+				4C13B4731452112700EF1089 /* SBJsonStreamParserAccumulator.m */,
+				4C13B4741452112700EF1089 /* SBJsonStreamParserAdapter.h */,
+				4C13B4751452112700EF1089 /* SBJsonStreamParserAdapter.m */,
+				4C13B4761452112700EF1089 /* SBJsonStreamParserState.h */,
+				4C13B4771452112700EF1089 /* SBJsonStreamParserState.m */,
+				4C13B4781452112700EF1089 /* SBJsonStreamWriter.h */,
+				4C13B4791452112700EF1089 /* SBJsonStreamWriter.m */,
+				4C13B47A1452112700EF1089 /* SBJsonStreamWriterAccumulator.h */,
+				4C13B47B1452112700EF1089 /* SBJsonStreamWriterAccumulator.m */,
+				4C13B47C1452112700EF1089 /* SBJsonStreamWriterState.h */,
+				4C13B47D1452112700EF1089 /* SBJsonStreamWriterState.m */,
+				4C13B47E1452112700EF1089 /* SBJsonTokeniser.h */,
+				4C13B47F1452112700EF1089 /* SBJsonTokeniser.m */,
+				4C13B4801452112700EF1089 /* SBJsonUTF8Stream.h */,
+				4C13B4811452112700EF1089 /* SBJsonUTF8Stream.m */,
+				4C13B4821452112700EF1089 /* SBJsonWriter.h */,
+				4C13B4831452112700EF1089 /* SBJsonWriter.m */,
+			);
+			name = JSON;
+			sourceTree = "<group>";
+		};
+		4C13B46A1452112700EF1089 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C13B4841452112700EF1089 /* PlatformSDK-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4C5500041452420300E4368B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				4C5500061452423700E4368B /* platform.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C13B43C1452111800EF1089 /* PlatformClientSample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C13B45E1452111800EF1089 /* Build configuration list for PBXNativeTarget "PlatformClientSample" */;
+			buildPhases = (
+				4C13B4391452111800EF1089 /* Sources */,
+				4C13B43A1452111800EF1089 /* Frameworks */,
+				4C13B43B1452111800EF1089 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlatformClientSample;
+			productName = PlatformClientSample;
+			productReference = 4C13B43D1452111800EF1089 /* PlatformClientSample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C13B4341452111800EF1089 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = Geni.com;
+			};
+			buildConfigurationList = 4C13B4371452111800EF1089 /* Build configuration list for PBXProject "PlatformClientSample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4C13B4321452111800EF1089;
+			productRefGroup = 4C13B43E1452111800EF1089 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C13B43C1452111800EF1089 /* PlatformClientSample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C13B43B1452111800EF1089 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C13B44C1452111800EF1089 /* InfoPlist.strings in Resources */,
+				4C13B4551452111800EF1089 /* MainStoryboard_iPhone.storyboard in Resources */,
+				4C13B4581452111800EF1089 /* MainStoryboard_iPad.storyboard in Resources */,
+				4C5500071452423700E4368B /* platform.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C13B4391452111800EF1089 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C13B44E1452111800EF1089 /* main.m in Sources */,
+				4C13B4521452111800EF1089 /* AppDelegate.m in Sources */,
+				4C13B45B1452111800EF1089 /* ViewController.m in Sources */,
+				4C13B4851452112700EF1089 /* NSObject+SBJson.m in Sources */,
+				4C13B4861452112700EF1089 /* SBJsonParser.m in Sources */,
+				4C13B4871452112700EF1089 /* SBJsonStreamParser.m in Sources */,
+				4C13B4881452112700EF1089 /* SBJsonStreamParserAccumulator.m in Sources */,
+				4C13B4891452112700EF1089 /* SBJsonStreamParserAdapter.m in Sources */,
+				4C13B48A1452112700EF1089 /* SBJsonStreamParserState.m in Sources */,
+				4C13B48B1452112700EF1089 /* SBJsonStreamWriter.m in Sources */,
+				4C13B48C1452112700EF1089 /* SBJsonStreamWriterAccumulator.m in Sources */,
+				4C13B48D1452112700EF1089 /* SBJsonStreamWriterState.m in Sources */,
+				4C13B48E1452112700EF1089 /* SBJsonTokeniser.m in Sources */,
+				4C13B48F1452112700EF1089 /* SBJsonUTF8Stream.m in Sources */,
+				4C13B4901452112700EF1089 /* SBJsonWriter.m in Sources */,
+				4C13B4911452112700EF1089 /* Platform.m in Sources */,
+				4C13B4921452112700EF1089 /* PlatformRequest.m in Sources */,
+				4C13B4931452112700EF1089 /* PlatformResponse.m in Sources */,
+				4C55000B1452430700E4368B /* BookmarkTableViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4C13B44A1452111800EF1089 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C13B44B1452111800EF1089 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4C13B4531452111800EF1089 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C13B4541452111800EF1089 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		4C13B4561452111800EF1089 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C13B4571452111800EF1089 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C13B45C1452111800EF1089 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4C13B45D1452111800EF1089 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4C13B45F1452111800EF1089 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PlatformClientSample/PlatformClientSample-Prefix.pch";
+				INFOPLIST_FILE = "PlatformClientSample/PlatformClientSample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4C13B4601452111800EF1089 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PlatformClientSample/PlatformClientSample-Prefix.pch";
+				INFOPLIST_FILE = "PlatformClientSample/PlatformClientSample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C13B4371452111800EF1089 /* Build configuration list for PBXProject "PlatformClientSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C13B45C1452111800EF1089 /* Debug */,
+				4C13B45D1452111800EF1089 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C13B45E1452111800EF1089 /* Build configuration list for PBXNativeTarget "PlatformClientSample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C13B45F1452111800EF1089 /* Debug */,
+				4C13B4601452111800EF1089 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C13B4341452111800EF1089 /* Project object */;
+}
