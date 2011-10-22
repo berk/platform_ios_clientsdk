@@ -1,0 +1,165 @@
+= Welcome to Platform iOS Client SDK 
+
+This library is intended to be used with the Platform gem:
+
+https://github.com/berk/platform
+
+This open source iOS library allows you to integrate your mobile iOS application with any server that uses the platform gem.
+The library is compatible with all iOS 5 devices, including iPhone and iPad.
+
+= Getting Started
+
+The SDK is fully self-contained and does not require any additional libraries.
+
+Follow these steps to download the Platform iOS SDK to your computer:
+
+1. Install git on your computer
+
+2. Download Platform iOS SDK using the following command:
+
+  git clone git@github.com:berk/platform_ios_clientsdk.git
+
+
+= Sample Application
+
+Before you proceed with your own application integration, try out our sample application. Our sample application demonstrates our authentication mechanism as well as allows you to download data from the sample application using the sample API.
+
+The sample application is located here:
+
+	platform_ios_clientsdk/PlatformClientSample/PlatformClientSample.xcodeproj
+
+Once you open the project file, make sure you do the following:
+
+1. Visit the platform server and register your application. You will be given your application id, key and secret.
+2. Open your iOS application delegate and replace YOUR_APPLICATION_ID with the value you got from the previous step.
+3. Open your iOS application Info.plist and replace YOUR_APPLICATION_ID with the value from the first step.
+4. Run the sample application and click on the "Connect to Platform" button. Provide your Application user login and then authorize your application.
+5. Once you authorized your app, you will be taken back to the sample application, which will present you with some data from the server.
+
+If you would like to see the requests and responses sent and received from the server, then open PlatformRequest.m and enable logging: 
+
+  static const BOOL kEnableLogging = YES;
+
+
+= Getting Your Application Up And Running In 10 (Relatively) Simple Steps
+
+Follow these instructions to integrate Platform iOS SDK into your application:
+
+=== Step 1
+Open platform_ios_clientsdk/PlatformSDK/PlatformSDK.xcodeproj and drag the Classes folder/group into your own application root. You can choose to either copy the folder into your application or link it as a source folder. If  you keep it linked, you will be able to download the latest version of the SDK without having to re-copy the latest changes to your application.
+
+
+=== Step 2
+Include PlatformSDK in your application classes (where you need the Platform functionality):
+
+  import "PlatformSDK.h"
+
+
+=== Step 3
+Visit the server you are integrating with and register your application.  You will be given your application key and secret.
+
+=== Step 4
+Instantiate the Platform object:
+ 
+  Platform *platform = [[Platform alloc] initWithId:YOUR_APPLICATION_ID];
+  
+Replace the YOUR_APPLICATION_ID with the appropriate values you got from step 3. If you are planning to have more than one controller accessing Platform API, it is recommend that you keep the Platform object in your Application Delegate and make your Application Delegate implement the PlatformSessionDelegate protocol. 
+
+
+=== Step 5
+Call authorization method to authorize your application:
+
+  [platform authorize:self];
+
+The parameter of the authorize method expects an object that implements PlatformSessionDelegate. The authorization mechanism uses OAuth framework that takes the user to a Safari web browser, where the user can login and authorize your application. Once the user has authorized your application, the browser will redirect the user back to your application. 
+
+
+=== Step 6
+In order for the iOS device to recognize the redirect call from the Safari browser and launch your application correctly, add the following property to your application's plist file (you can open the file as source code and deal with XML directly):
+
+  <key>CFBundleURLTypes</key>
+  <array>
+    <dict>
+  		<key>CFBundleURLName</key>
+  		<string></string>
+  		<key>CFBundleURLSchemes</key>
+  		<array>
+  			<string>app[YOUR_APPLICATION_ID]</string>
+  		</array>
+    </dict>
+  </array>  
+
+
+Replace YOUR_APPLICATION_ID with the value you got from step 4.
+
+=== Step 7
+When Safari browser redirects users back to your application, it will match the url from the previous step and call the following method in your Application Delegate:
+
+  - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+      return [platform handleOpenURL:url];
+  }
+
+Make sure you add the above code to your Application Delegate so that Platform client receives the authorization code.
+
+=== Step 8
+Platform client will process the URL it received in the previous step and call one of the following methods on the session delegate you specified in step 5.
+
+  - (void)platformUserDidLogin;
+
+  - (void)platformUserDidNotLogin:(BOOL)cancelled;
+
+At this point you will either have a user that has authorized your application or canceled the action. You can handle each case in the above methods. If the user has authorized your application, you may now call any Platform API methods.
+
+=== Step 9
+You can make calls to the Platform server using any of the following methods:
+
+  - (PlatformRequest*)requestWithPath: (NSString *)path
+                          andDelegate: (id <PlatformRequestDelegate>)delegate;
+
+  - (PlatformRequest*)requestWithPath: (NSString *)path
+                            andParams: (NSMutableDictionary *)params
+                          andDelegate: (id <PlatformRequestDelegate>)delegate;
+
+  - (PlatformRequest*)requestWithPath: (NSString *)path
+                            andParams: (NSMutableDictionary *)params
+                        andHttpMethod: (NSString *)httpMethod
+                          andDelegate: (id <PlatformRequestDelegate>)delegate;
+
+
+For example, the following code will return back the current user JSON object:
+
+  [Platform requestWithPath:@"user" delegate:self]; 
+
+All of the calls to the Platform API are made asynchronously using the callback mechanism and a PlatformRequestDelegate protocol. PlatformRequestDelegate has a number of optional methods, among them:
+
+  - (void)request:(PlatformRequest *)request didLoad:(id)result;
+
+  - (void)request:(PlatformRequest *)request didFailWithError:(NSError *)error;
+
+If the request was successful, the "didLoad" method will be called and a call value will be passed as a parameter. If the request failed, then "didFailWithError" will be called instead.
+
+For the above example, your code may look something like this:
+
+  - (IBAction) getCurrentUserInfo: (id) caller {
+         [Platform requestWithPath:@"user" delegate:self]; 
+  }
+
+  - (void)request:(PlatformRequest *)request didLoad:(id)result {
+	NSDictionary *userInfo = (NSDictionary *) result;
+        NSLog(@"Name: %@", [userInfo valueForKey:@"name"]);
+  }
+
+
+=== Step 10
+To logout from Platform, call the following method:
+
+  [Platform logout:self];
+
+The parameter must be an object that implements the PlatformSessionDelegate protocol.
+
+
+= API Documentation
+
+To get more information on available API, please visit the server's api section.
+
+
