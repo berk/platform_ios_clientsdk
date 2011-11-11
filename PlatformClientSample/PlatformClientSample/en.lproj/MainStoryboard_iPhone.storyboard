@@ -25,14 +25,14 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="logoutClicked:" destination="BzA-ER-xol" eventType="touchUpInside" id="0Ub-IC-AAW"/>
+                                    <action selector="logoutClicked:" destination="BzA-ER-xol" eventType="touchUpInside" id="RYc-pk-ga3"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hGN-QN-PBf">
-                                <rect key="frame" x="73" y="302" width="185" height="37"/>
+                                <rect key="frame" x="31" y="302" width="258" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Connect with Platform">
+                                <state key="normal" title="Connect with Bookmarklet">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -43,14 +43,17 @@
                                     <action selector="loginClicked:" destination="BzA-ER-xol" eventType="touchUpInside" id="wvQ-gw-oXl"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="platform.png" id="fx8-2Q-CZE">
-                                <rect key="frame" x="35" y="37" width="250" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Welcome to the Platform Sample Application!" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="Wep-Ii-6A9">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Welcome to the My Bookmarks Application!" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="Wep-Ii-6A9">
                                 <rect key="frame" x="5" y="152" width="320" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="My Bookmarks" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" id="Jxl-t1-Nkz">
+                                <rect key="frame" x="0.0" y="31" width="320" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -64,7 +67,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Sample Application" id="lCD-l8-iqL"/>
+                    <navigationItem key="navigationItem" title="My Bookmarks" id="lCD-l8-iqL"/>
                     <connections>
                         <outlet property="loginButton" destination="hGN-QN-PBf" id="Fji-lf-bx4"/>
                         <outlet property="logoutButton" destination="pkN-wl-1L1" id="ZcY-u3-iAJ"/>
@@ -112,8 +115,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="uUg-Kb-mUW" id="PYw-mx-CHC"/>
-                                    <outlet property="delegate" destination="uUg-Kb-mUW" id="BJn-HJ-czV"/>
+                                    <outlet property="dataSource" destination="uUg-Kb-mUW" id="dYw-B5-4JW"/>
+                                    <outlet property="delegate" destination="uUg-Kb-mUW" id="Gdg-t0-y0X"/>
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" id="ll8-kU-6I5">
@@ -138,25 +141,28 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Bookmarks" id="VLf-vl-lti">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="sdx-g9-wSu"/>
+                        <barButtonItem key="backBarButtonItem" title="Logout" id="sdx-g9-wSu"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="aOn-ex-bDU">
+                            <connections>
+                                <action selector="reloadBookmarks:" destination="uUg-Kb-mUW" id="P32-lT-j5c"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="loadingView" destination="ll8-kU-6I5" id="oyi-9b-OaI"/>
-                        <outlet property="tableView" destination="C1z-0Y-SRV" id="2DN-g1-6rz"/>
+                        <outlet property="tableView" destination="C1z-0Y-SRV" id="jjH-C3-kAI"/>
                     </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="357" y="308"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="platform.png" width="516" height="114"/>
-    </resources>
     <classes>
         <class className="BookmarkTableViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BookmarkTableViewController.h"/>
             <relationships>
+                <relationship kind="action" name="reloadBookmarks:"/>
                 <relationship kind="outlet" name="loadingView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>

@@ -80,8 +80,8 @@
 - (IBAction)logoutClicked:(id)sender {
     AppDelegate *appDelegate = (AppDelegate*) [[UIApplication sharedApplication] delegate];
     [appDelegate logout];
-    [loginButton setHidden:YES];
-    [logoutButton setHidden:NO];
+    [loginButton setHidden:NO];
+    [logoutButton setHidden:YES];
 }
 
 @end

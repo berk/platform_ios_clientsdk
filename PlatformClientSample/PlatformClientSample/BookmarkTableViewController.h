@@ -16,4 +16,7 @@
 
 @property(nonatomic, retain) IBOutlet UIView *loadingView;
 
+
+- (IBAction) reloadBookmarks: (id) sender;
+
 @end
